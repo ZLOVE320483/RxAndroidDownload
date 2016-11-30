@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.zlove.rxandroiddownload"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".practice.BasicDownloadActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".practice.service.ServiceDownloadActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".practice.market.AppMarketActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".practice.manager.DownloadManagerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <service android:name=".download.DownloadService"/>
+    </application>
+
+</manifest>
